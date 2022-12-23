@@ -4,7 +4,7 @@
 Because sometimes you are a Bilkent student and your outputs must match line by line, character by character.
 ## What?
 File comparator takes two files and reads them line by line. It checks whether each line matches or not. There are a few possibilities for the output:
-* Nothing: This is actually an error but you will not explicitly receive the error if you run from the terminal. Follow the [guidelines](#How?) to avoid this.
+* Nothing: This is actually an error but you will not explicitly receive the error if you run from the terminal. Follow the [guidelines](#how) to avoid this.
 * Incorrect Files: You will get this output if the files you specify are not found during the execution. The program presents a feedback on which files are missing.
 * Non-matching *END_OF_FILE*s: If one file you provided has more lines than the other, the program regards files to be **completely different** and does not tell you how many lines are matching. We have strict boundaries here.
 * Mismatch Report: If you were not caught by anything listed above, the program actually presents you the number of lines read, the number of matching lines and the number of mismatching lines; followed by each mismatch with their line numbers and each file's line content. If the files match completely, you will have something like this:
