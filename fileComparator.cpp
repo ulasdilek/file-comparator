@@ -1,3 +1,8 @@
+/*
+ * This little app-ling is developed by ulasdilek on a fine (by fine I mean freezing cold) Friday afternoon on December 23rd, 2022
+ * Stealing it is by no means prohibited, actually encouraged. But you have to pay the price with your soul ^^
+ */
+
 #include <iostream>
 #include <fstream>
 #include <vector>
