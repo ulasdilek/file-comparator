@@ -33,7 +33,7 @@ int main(int argc, char *argv[]) {
         eof1 = file1.eof();
         eof2 = file2.eof();
         if (eof1 && eof2) {
-            cout << line << " lines were compared. There are a total of " << (line - mismatches.size()) << " correct lines and " << mismatches.size() << " mismatches:" << endl << endl;
+            cout << line << " lines were compared. There are a total of " << (line - mismatches.size()) << " matching lines and " << mismatches.size() << " mismatches:" << endl << endl;
             int count = 0;
             for (const auto &mismatch: mismatches) {
                 count++;
@@ -44,10 +44,24 @@ int main(int argc, char *argv[]) {
             }
         }
         else if (eof1) {
+            int dif = 0;
+            while (!file2.eof()) {
+                dif++;
+                string trash;
+                getline(file2, trash);
+            }
             cout << "End of " << path1 << " reached but did not finish reading " << path2 << endl;
+            cout << "There are " << line << " lines in " << path1 << " but " << (line + dif) << " lines in " << path2 << ". The difference is " << dif << "." << endl;
         }
         else if (eof2) {
+            int dif = 0;
+            while (!file1.eof()) {
+                dif++;
+                string trash;
+                getline(file1, trash);
+            }
             cout << "End of " << path2 << " reached but did not finish reading " << path1 << endl;
+            cout << "There are " << line << " lines in " << path2 << " but " << (line + dif) << " lines in " << path1 << ". The difference is " << dif << "." << endl;
         }
         else {
             cout << "None of the files were read completely. What?" << endl;
